@@ -136,7 +136,7 @@ class ResumableUploadViewTest(BaseTestCase):
     def test_get_missing(self):
         url = '%s?%s' % (reverse('upload'), urlencode(seagull))
         r = self.client.get(url)
-        self.assertEqual(r.status_code, 404)
+        self.assertEqual(r.status_code, 204)
 
     def test_post_missing(self):
         self.assertFalse(self.seagull.chunk_exists)
